@@ -42,5 +42,12 @@ RUN cp chromedriver /usr/local/bin && chmod +x /usr/local/bin/chromedriver
 
 # RUN apt-get install -y udev
 
-CMD ["/scripts/run_suite.sh"]
+# Run a script with arguments
+# https://stackoverflow.com/a/40312311/1933185
+
+#CMD ["/scripts/run_suite.sh"]
+
+ENTRYPOINT ["/scripts/run_suite.sh"]
+CMD []
+
 
