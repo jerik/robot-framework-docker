@@ -1,5 +1,9 @@
 # overall
 
+
+# symlink to my folder with the testcases
+suites
+
 # folders
-suites/
 suites.org/
+reports/
