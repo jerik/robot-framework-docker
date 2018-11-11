@@ -3,8 +3,7 @@ set -e
 
 CMD="robot --console verbose --exclude once --outputdir /reports /suites"
 
-# FIXME test: ==: unary operator expected
-if test "$@" == "once"; then 
+if [[ "$@" = "once" ]]; then 
 	# this will run the testcases with the tag "once"
 	# In this testcase I create a random new user with the login credetials of suites/newuser.txt
 	# the user is then activated and can be used by the other tests, where the testcases with tag "once" are excluded
