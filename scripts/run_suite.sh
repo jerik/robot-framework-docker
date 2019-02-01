@@ -15,10 +15,18 @@ if [[ ! -z "$@" ]]; then
 		echo ":: RUN ONCE"
 		zufall=$( openssl rand -hex 4 )
 		rduser=bot-${zufall}
-		echo '*** Variables ***' > suites/newuser.txt
-		echo "\${USER}    ${rduser}" >> suites/newuser.txt
-		echo "\${EMAIL}    ${rduser}@mailinator.com" >> suites/newuser.txt
-		echo "\${USERPW}    ${zufall}#Mii" >> suites/newuser.txt
+		config_file=suites/newuser.txt
+		echo '*** Variables ***' > $config_file
+		echo "\${USER}    ${rduser}" >> $config_file
+		echo "\${EMAIL}    ${rduser}@mailinator.com" >> $config_file
+		echo "\${USERPW}    ${zufall}#Mii" >> $config_file
+
+		# ${AUTHURL}    https://admin:testserver@dev1.doccons24.de/login
+		# ${BASEURL}    https://dev1.doccons24.de
+		echo >> $config_file
+		echo "\${AUTHURL}    https://admin:testserver@test.doccons24.de/login" >> $config_file
+		echo "\${BASEURL}    https://test.doccons24.de" >> $config_file
+
 		CMD="robot --console verbose --include once --outputdir /reports /suites"
 	else 
 		# ex: ./run_test.sh --include capture
