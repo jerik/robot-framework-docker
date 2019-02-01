@@ -19,7 +19,8 @@ if [[ ! -z "$@" ]]; then
 		echo '*** Variables ***' > $config_file
 		echo "\${USER}    ${rduser}" >> $config_file
 		echo "\${EMAIL}    ${rduser}@mailinator.com" >> $config_file
-		echo "\${USERPW}    ${zufall}#Mii" >> $config_file
+		#echo "\${USERPW}    ${zufall}#Mii" >> $config_file
+		echo "\${USERPW}    Calvin#007" >> $config_file
 
 		# ${AUTHURL}    https://admin:testserver@dev1.doccons24.de/login
 		# ${BASEURL}    https://dev1.doccons24.de
