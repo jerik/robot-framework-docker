@@ -4,7 +4,7 @@ set -e
 # ex: ./run_test.sh 
 CMD="robot --console verbose --exclude once --outputdir /reports /suites"
 
-# Test if variabel is empty
+# Test if not variabel is empty
 if [[ ! -z "$@" ]]; then 
 
 	if [[ "$@" = "once" ]]; then 
