@@ -4,6 +4,21 @@ set -e
 # ex: ./run_test.sh 
 CMD="robot --console verbose --exclude once --outputdir /reports /suites"
 
+# get parameters from run_test.sh
+params="$@"
+
+# check if suites init.sh file exists
+init_file="suites/init.sh"
+if [ ! -f $init_file ]; then 
+	echo File $init_file does not exists.
+	echo Be sure that you run run_suite.sh through ../run_test.sh. Exit. # runing run_suite.sh will not work with $init_file
+	exit
+fi
+
+# run init.sh with params
+bash $init_file $params
+
+exit
 # Test if not variabel is empty
 if [[ ! -z "$@" ]]; then 
 
